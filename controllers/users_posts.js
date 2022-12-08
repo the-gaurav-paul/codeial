@@ -1,3 +1,7 @@
 module.exports.posts = function(req, res){
-    res.end('<h1>users posts</h1>');
+
+    //home used below is home.ejs
+    return res.render('home',{
+        title: "posts"
+    })
 }
