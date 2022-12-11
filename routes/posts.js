@@ -1,7 +1,8 @@
 const exp = require('express');
 const router = exp.Router();
-const usersPosts = require('../controllers/users_posts');
+const passport = require('passport');
+const postsController = require('../controllers/posts_controller');
 
-router.get('/posts', usersPosts.posts);
+router.post('/create',passport.checkAuthentication, postsController.create);
 
 module.exports = router;
