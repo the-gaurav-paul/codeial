@@ -70,6 +70,7 @@ module.exports.create = function (req, res) {
 
 //get the sign in data
 module.exports.createSession = function (req, res) {
+  req.flash('success','Logged in successfully');
    return res.redirect('/');
 };
 
@@ -79,6 +80,9 @@ module.exports.destroySession = function(req,res){
     if(err){
       return res.redirect('back');
     }
+    req.flash('success','Logged out successfully');
   });
+ 
+  req.flash('success','Logged out successfully');
   return res.redirect('/');
 }
