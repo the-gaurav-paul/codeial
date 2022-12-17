@@ -23,6 +23,9 @@ const customMware = require('./config/middleware');
 app.use(exp.urlencoded());
 app.use(cookieParser());
 app.use(exp.static('./assets'));
+
+//make the uploads path visible to browser
+app.use('/uploads',exp.static(__dirname + '/uploads'));
 app.use(expressLayouts);
 
 /*extract styles and scripts of individual pages and to 
